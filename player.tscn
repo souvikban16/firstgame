@@ -3,8 +3,8 @@
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/bluey/idle.png" type="Texture" id=2]
 [ext_resource path="res://sprites/bluey/jump.png" type="Texture" id=3]
-[ext_resource path="res://sprites/bluey/run.png" type="Texture" id=4]
-[ext_resource path="res://sprites/bluey/fall.png" type="Texture" id=5]
+[ext_resource path="res://sprites/bluey/fall.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bluey/run.png" type="Texture" id=5]
 [ext_resource path="res://sounds/jump.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -21,13 +21,13 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "run",
-"speed": 1.0
+"name": "fall",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "fall",
-"speed": 5.0
+"name": "run",
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
