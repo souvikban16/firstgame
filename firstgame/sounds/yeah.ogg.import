@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/yeah.ogg-b2425fd18281d1e151bd7263fd18ecd3.oggstr"
+
+[deps]
+
+source_file="res://sounds/yeah.ogg"
+dest_files=[ "res://.import/yeah.ogg-b2425fd18281d1e151bd7263fd18ecd3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

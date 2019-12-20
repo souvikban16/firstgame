@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/YOU DIED (HD).ogg-dbc33ddd30df84f9961e82d99bf42465.oggstr"
+
+[deps]
+
+source_file="res://sounds/YOU DIED (HD).ogg"
+dest_files=[ "res://.import/YOU DIED (HD).ogg-dbc33ddd30df84f9961e82d99bf42465.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

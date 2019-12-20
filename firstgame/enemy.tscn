@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://enemy.gd" type="Script" id=1]
+[ext_resource path="res://sprites/pinky/pinky.png" type="Texture" id=2]
+[ext_resource path="res://sounds/enemy dead.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 4.86797 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 14.6329, 7.40581 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10.8128, 9.27921 )
+
+[node name="enemy" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+currentscene = "res://testscene.tscn"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="headbox" type="Area2D" parent="Sprite"]
+
+[node name="head" type="CollisionShape2D" parent="Sprite/headbox"]
+position = Vector2( 1.6037, -5.36673 )
+shape = SubResource( 2 )
+
+[node name="bodybox" type="Area2D" parent="Sprite"]
+
+[node name="body" type="CollisionShape2D" parent="Sprite/bodybox"]
+position = Vector2( 1.02808, 9.25288 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.06689, 7.21186 )
+shape = SubResource( 4 )
+
+[node name="dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="body_entered" from="Sprite/headbox" to="." method="_on_headbox_body_entered"]
+[connection signal="body_entered" from="Sprite/bodybox" to="." method="_on_bodybox_body_entered"]
+[connection signal="finished" from="dead" to="." method="_on_dead_finished"]

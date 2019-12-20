@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://UI/basic UI.tres" type="Theme" id=1]
+[ext_resource path="res://Label.gd" type="Script" id=2]
+[ext_resource path="res://UI/Label.gd" type="Script" id=3]
+[ext_resource path="res://sprites/touchpads/arrow_left.png" type="Texture" id=4]
+[ext_resource path="res://sprites/touchpads/arrow_left_pressed.png" type="Texture" id=5]
+[ext_resource path="res://sprites/touchpads/arrow_right.png" type="Texture" id=6]
+[ext_resource path="res://sprites/touchpads/arrow_right_pressed.png" type="Texture" id=7]
+[ext_resource path="res://sprites/touchpads/pause.png" type="Texture" id=8]
+[ext_resource path="res://sprites/touchpads/pause_pressed.png" type="Texture" id=9]
+[ext_resource path="res://sprites/touchpads/arrow_up.png" type="Texture" id=10]
+[ext_resource path="res://sprites/touchpads/arrow_up_pressed.png" type="Texture" id=11]
+
+[node name="MarginContainer" type="MarginContainer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Control" type="ViewportContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+stretch = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_right = 100.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer"]
+margin_left = 50.0
+margin_top = 20.0
+margin_right = 50.0
+margin_bottom = 30.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer2"]
+margin_left = 50.0
+margin_top = 20.0
+margin_right = 50.0
+margin_bottom = 30.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="touch" type="CenterContainer" parent="Control"]
+margin_top = 200.0
+margin_right = 200.0
+margin_bottom = 360.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/touch"]
+margin_left = 100.0
+margin_top = 80.0
+margin_right = 100.0
+margin_bottom = 80.0
+
+[node name="left" type="TouchScreenButton" parent="Control/touch/HBoxContainer"]
+position = Vector2( -96.2076, 27.6801 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
+action = "left"
+visibility_mode = 1
+
+[node name="right" type="TouchScreenButton" parent="Control/touch/HBoxContainer"]
+position = Vector2( 8.87619, 25.3745 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+action = "right"
+visibility_mode = 1
+
+[node name="touchpause" type="CenterContainer" parent="Control"]
+margin_left = 320.0
+margin_right = 321.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/touchpause"]
+position = Vector2( -9.60614, 0 )
+scale = Vector2( 1.20013, 1 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 9 )
+action = "pause"
+visibility_mode = 1
+
+[node name="jump" type="CenterContainer" parent="Control"]
+margin_left = 570.0
+margin_top = 290.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 70, 70 )
+
+[node name="up" type="TouchScreenButton" parent="Control/jump"]
+normal = ExtResource( 10 )
+pressed = ExtResource( 11 )
+action = "jump"
+visibility_mode = 1
