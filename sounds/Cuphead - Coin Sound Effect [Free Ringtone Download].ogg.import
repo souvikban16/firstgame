@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cuphead - Coin Sound Effect [Free Ringtone Download].ogg-c21fa99efb773bff77e3590863455736.oggstr"
+
+[deps]
+
+source_file="res://sounds/Cuphead - Coin Sound Effect [Free Ringtone Download].ogg"
+dest_files=[ "res://.import/Cuphead - Coin Sound Effect [Free Ringtone Download].ogg-c21fa99efb773bff77e3590863455736.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
