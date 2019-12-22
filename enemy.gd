@@ -11,11 +11,10 @@ func _physics_process(delta):
 	motion.y +=gravity
 	motion.x=-speed
 	motion=move_and_slide(motion,up)
-#	var bodies=$Sprite/headbox.get_overlapping_bodies()
-#	for body in bodies:
-#		if body.name=="player":
-#			global.points+=1
-#			$dead.play()
+	var bodies=$Sprite/bodybox.get_overlapping_areas()
+	for body in bodies:
+		if body.name=="water":
+			queue_free()
 
 #
 #	bodies=$Sprite/bodybox.get_overlapping_bodies()
@@ -42,12 +41,12 @@ func _on_headbox_body_entered(body):
 
 
 func _on_bodybox_body_entered(body):
-		if body.name=="player":
-			global.lives-=1
-			global.points=0
-			get_tree().reload_current_scene()
-			print(global.lives)
-
+	print(body.name)
+	if body.name=="player":
+		global.lives-=1
+		global.points=0
+		get_tree().reload_current_scene()
+		print(global.lives)
 
 
 
