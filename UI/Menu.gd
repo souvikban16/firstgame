@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://testscene.tscn")
+	get_tree().change_scene("res://testlevel_1.tscn")
 	
 
 
