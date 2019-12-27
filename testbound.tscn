@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/tileset/soil.tres" type="TileSet" id=1]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
+
+[node name="testbound" type="Node2D"]
+
+[node name="soil" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327697, 0, 1, 393218, 0, 1, 393233, 0, 1, 458754, 0, 1, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458759, 0, 1, 458760, 0, 1, 458761, 0, 1, 458762, 0, 1, 458763, 0, 1, 458764, 0, 1, 458765, 0, 1, 458766, 0, 1, 458767, 0, 1, 458768, 0, 1, 458769, 0, 1 )
+
+[node name="enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 153, 122 )
+
+[node name="enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 468, 131 )

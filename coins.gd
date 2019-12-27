@@ -6,14 +6,16 @@ extends Node
 #		if body.name=="player":
 #
 #			$ching.play()
+func _ready():
+	$Area2D/AnimatedSprite.play("default")
 #
 
 func _on_ching_finished():
-	global.points+=1
 	queue_free()
 
 
 func _on_Area2D_body_entered(body):
 	if body.name=="player":
 		global.points+=1
+		$Area2D/AnimatedSprite.play("vanished")
 		$ching.play()

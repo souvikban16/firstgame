@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
 [ext_resource path="res://sprites/pinky/pinky.png" type="Texture" id=2]
@@ -11,6 +11,12 @@ extents = Vector2( 10, 4.86797 )
 extents = Vector2( 14.6329, 7.40581 )
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2, 4 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3, 4 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10.8128, 9.27921 )
 
 [node name="enemy" type="KinematicBody2D"]
@@ -35,12 +41,38 @@ shape = SubResource( 1 )
 position = Vector2( 1.02808, 9.25288 )
 shape = SubResource( 2 )
 
+[node name="wallcheck" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/wallcheck"]
+position = Vector2( -18, 7 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/wallcheck"]
+position = Vector2( 19, 7 )
+shape = SubResource( 3 )
+
+[node name="edgecheckleft" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/edgecheckleft"]
+position = Vector2( -21, 21 )
+shape = SubResource( 4 )
+
+[node name="edgecheckright" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/edgecheckright"]
+position = Vector2( 22, 21 )
+shape = SubResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.06689, 7.21186 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="dead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 [connection signal="body_entered" from="Sprite/headbox" to="." method="_on_headbox_body_entered"]
 [connection signal="body_entered" from="Sprite/bodybox" to="." method="_on_bodybox_body_entered"]
+[connection signal="area_entered" from="Sprite/wallcheck" to="." method="_on_wallcheck_area_entered"]
+[connection signal="body_entered" from="Sprite/wallcheck" to="." method="_on_wallcheck_body_entered"]
+[connection signal="body_exited" from="Sprite/edgecheckleft" to="." method="_on_edgecheckleft_body_exited"]
+[connection signal="body_exited" from="Sprite/edgecheckright" to="." method="_on_edgecheckright_body_exited"]
 [connection signal="finished" from="dead" to="." method="_on_dead_finished"]
