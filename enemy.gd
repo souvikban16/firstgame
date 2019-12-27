@@ -44,7 +44,6 @@ func _on_headbox_body_entered(body):
 
 
 func _on_bodybox_body_entered(body):
-	print(body.name)
 	if body.name=="player":
 		global.lives-=1
 		global.points=0
@@ -56,9 +55,7 @@ func _on_bodybox_body_entered(body):
 
 
 func _on_wallcheck_body_entered(body):
-	print (body.name)
 	if body.name=="soil":
-		print(body.name)
 		directionflag=not directionflag
 		$Sprite.flip_h=directionflag
 		speed*=-1
@@ -77,7 +74,6 @@ func _on_edgecheckleft_body_exited(body):
 func _on_edgecheckright_body_exited(body):
 	if body.name=="soil":
 		directionflag=not directionflag
-		print (directionflag)
 		$Sprite.flip_h=directionflag
 		speed*=-1
 
@@ -85,7 +81,6 @@ func _on_edgecheckright_body_exited(body):
 func _on_wallcheck_area_entered(area):
 	if area.name=="wallcheck":
 		directionflag=not directionflag
-		print (directionflag)
 		$Sprite.flip_h=directionflag
 		speed*=-1
 		

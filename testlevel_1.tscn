@@ -408,21 +408,28 @@ position = Vector2( 5793, 501 )
 
 [node name="enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 690, 533 )
+currentscene = "res://testlevel_1.tscn"
 
 [node name="enemy2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1083, 384 )
+currentscene = "res://testlevel_1.tscn"
 
 [node name="enemy3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3010, 538 )
+position = Vector2( 2952, 542 )
+currentscene = "res://testlevel_1.tscn"
 
 [node name="enemy4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4288, 658 )
+position = Vector2( 4038, 658 )
+currentscene = "res://testlevel_1.tscn"
 
 [node name="enemy5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4550, 672 )
+position = Vector2( 4247, 658 )
+currentscene = "res://testlevel_1.tscn"
 
 [node name="enemy6" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6165, 612 )
+position = Vector2( 6167, 608 )
+currentscene = "res://testlevel_1.tscn"
 
 [node name="enemy7" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6306, 612 )
+position = Vector2( 6393, 603 )
+currentscene = "res://testlevel_1.tscn"
